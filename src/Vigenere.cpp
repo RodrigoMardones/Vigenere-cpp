@@ -3,8 +3,13 @@
 #include <iostream>
 using namespace std;
 
+
 Vigenere::Vigenere(){
     //ctor
+}
+
+Vigenere::Vigenere(string a){
+    pass = a;
 }
 
 Vigenere::~Vigenere(){

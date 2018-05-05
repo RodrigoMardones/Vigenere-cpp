@@ -8,10 +8,10 @@ using namespace std;
 class Vigenere
 {
     public:
-
         Vigenere();
+        Vigenere(string a);
         void set_pass(string a);
-        string encriptar(string a );
+        string encriptar(string a);
         string desencriptar(string a);
         virtual ~Vigenere();
 
