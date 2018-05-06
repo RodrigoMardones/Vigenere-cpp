@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1525456394 source:/home/rodrigo/Escritorio/proyectos/c++/vigenere/Vigenere/main.cpp
+1525460494 source:/home/rodrigo/Escritorio/proyectos/c++/vigenere/Vigenere/main.cpp
 	<iostream>
+	<string>
 
 1525459837 source:/home/rodrigo/Escritorio/proyectos/c++/vigenere/Vigenere/src/Vigenere.cpp
 	"Vigenere.h"
