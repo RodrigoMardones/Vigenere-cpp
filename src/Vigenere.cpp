@@ -1,6 +1,8 @@
 #include "Vigenere.h"
 #include <string>
 #include <iostream>
+#include <bits/stdc++.h>
+
 using namespace std;
 
 
@@ -17,51 +19,52 @@ void Vigenere::set_pass(string a){
     pass = a;
 }
 
-string Vigenere::largo(string palabra){
+string Vigenere::llave(string palabra){
 
-    int val = palabra.size();
+    int x = palabra.size();
     //valor a retornar
-    string ret = "";
+    string ret = pass;
     for(int i= 0; ;i++){
-        if(val==0){
+        if(x == 0)
             i = 0;
-        }
-        if(pass.size() == palabra.size()){
+        if( ret.size() == palabra.size())
             break;
-        }
-        ret+=pass[i];
+        ret.push_back(ret[i]);
     }
     return ret;
 }
 
 string Vigenere::encriptar(string palabra){
     //clave alargada para evaluar
-    string ret = largo(palabra);
+    string key = llave(palabra);
+    string cifrado;
     //comparacion de caracater por caracter para el encriptado del dato
-    for(int i=0;i<palabra.size();i++){
+    for( int i=0 ; i<palabra.size() ; i++ ){
         //evaluado del dato
-        int a = (palabra[i] + ret[i])%26;
+        int a = (palabra[i] + key[i])%26;
         //conversion a acsii
-        a+='A';
+        a += 'A';
         //sumado a atributo encriptado
-        enc+=a;
+        cifrado.push_back(a);
     }
-    return enc;
+    return cifrado;
 }
 
-string Vigenere::desencriptar(string palabra){
+string Vigenere::desencriptar(string cifrado){
 
-    string ret = largo(palabra);
-    string des = "";
+    string key = llave(cifrado);
+    string origin;
 
-    for(int i=0;i<palabra.size();i++){
-        int a = (enc[i]-ret[i] + 26 )%26;
-        a+='A';
-        des+=a;
+    for( int i=0 ; i<cifrado.size() ; i++ ){
+
+        int a = (cifrado[i] - key[i] + 26 )%26;
+
+        a += 'A';
+
+        origin.push_back(a);
     }
     //limpia encriptado
-    enc = "";
-    return des;
+    return origin;
 }
 Vigenere::~Vigenere(){
     //dtor

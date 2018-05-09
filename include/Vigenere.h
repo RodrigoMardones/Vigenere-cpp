@@ -2,6 +2,8 @@
 #define VIGENERE_H
 #include <string>
 #include <iostream>
+#include <bits/stdc++.h>
+
 using namespace std;
 
 
@@ -15,17 +17,16 @@ class Vigenere
         //recibe como parametro b para encriptar
         string encriptar(string palabra);
         //recibe como parametro b para desencriptar
-        string desencriptar(string palabra);
+        string desencriptar(string cifrado);
         //recalcula el largo para evaluar
-        string largo(string palabra);
+        string llave(string palabra);
 
         virtual ~Vigenere();
 
     protected:
 
         //clave de encriptacion
-        string pass = "";
-        string enc = "";
+        string pass = "TAQUION";
     private:
 
 };
