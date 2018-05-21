@@ -1,9 +1,9 @@
 ### CodeBlocks ###
 # specific to CodeBlocks IDE
-*.layout
-*.depend
+*Vigenere.layout
+*Vigenere.depend
 
 # generated directories
-bin/
-obj/
+bin/Debug
+obj/Debug
 
